@@ -1,0 +1,209 @@
+/* Estilos generales */
+body {
+    font-family: 'Black Ops One', sans-serif; /* Aplicar la fuente */
+    background-color: #1a1a2e;
+    color: #e94560;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Video de fondo */
+#video-fondo {
+    position: fixed; /* Fija el video en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%; /* Cubre todo el ancho */
+    height: 100%; /* Cubre todo el alto */
+    object-fit: cover; /* Ajusta el video para cubrir toda la pantalla */
+    z-index: -1; /* Coloca el video detrás del contenido */
+}
+
+/* Contenedor principal */
+.cover-container, .instructions-container, .team-names-container, .categories-container, .loading-container, .game-container, .response-container, .result-container, .reveal-container, .final-container {
+    position: relative; /* Asegura que el contenido esté por encima del video */
+    z-index: 1; /* Coloca el contenido por encima del video */
+    background-color: rgba(22, 33, 62, 0.8); /* Fondo semitransparente para que el texto sea legible */
+    border: 3px solid #e94560; /* Borde rojo vibrante */
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 600px; /* Más compacto */
+    text-align: center;
+    box-shadow: 0 0 15px rgba(233, 69, 96, 0.6); /* Sombra roja neón */
+}
+
+/* Títulos */
+h1 {
+    font-size: 3em; /* Tamaño grande */
+    text-align: center; /* Centrar el texto */
+    margin: 20px 0; /* Espaciado superior e inferior */
+    color: #e94560; /* Color rojo vibrante */
+    text-shadow: 2px 2px 0 #8a1a1a; /* Sombra para efecto gamer */
+}
+
+h2, h3 {
+    color: #e94560; /* Texto en rojo vibrante */
+    text-shadow: 2px 2px 0 #8a1a1a; /* Sombra para efecto gamer */
+    font-size: 1.5em; /* Tamaño más pequeño */
+}
+
+/* Botones */
+button {
+    background-color: #e94560; /* Fondo rojo vibrante */
+    color: #ffffff; /* Texto blanco */
+    border: 2px solid #8a1a1a; /* Borde más oscuro */
+    padding: 8px 16px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px; /* Tamaño más pequeño */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #c2334f; /* Rojo más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de crecimiento más sutil */
+}
+
+button:active {
+    transform: scale(0.95); /* Efecto de compresión al hacer clic */
+}
+
+/* Inputs */
+input[type="text"] {
+    background-color: #16213e; /* Fondo azul oscuro */
+    border: 2px solid #e94560; /* Borde rojo vibrante */
+    color: #e94560; /* Texto en rojo vibrante */
+    padding: 8px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px; /* Tamaño más pequeño */
+    margin: 8px 0;
+    width: 80%; /* Más compacto */
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #c2334f; /* Borde más oscuro al enfocar */
+}
+
+/* Tablero de respuestas */
+.board {
+    background-color: #16213e; /* Fondo azul oscuro */
+    border: 3px solid #e94560; /* Borde rojo vibrante */
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.board ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.board li {
+    background-color: #e94560; /* Fondo rojo vibrante */
+    color: #ffffff; /* Texto blanco */
+    padding: 8px;
+    margin: 4px 0;
+    border: 2px solid #8a1a1a; /* Borde más oscuro */
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px; /* Tamaño más pequeño */
+}
+
+/* Cronómetro */
+#timer {
+    font-size: 20px; /* Tamaño más pequeño */
+    font-weight: bold;
+    color: #00ff88; /* Verde neón para el cronómetro */
+    text-shadow: 2px 2px 0 #005537; /* Sombra para efecto gamer */
+    margin: 15px 0;
+}
+
+/* Mensaje "¡TIEMPO!" */
+.time-up-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #16213e; /* Fondo azul oscuro */
+    border: 3px solid #00ff88; /* Borde verde neón */
+    padding: 15px;
+    text-align: center;
+    z-index: 1000;
+    animation: glow 1s infinite; /* Animación de resplandor */
+}
+
+.time-up-container h2 {
+    color: #00ff88; /* Texto en verde neón */
+    text-shadow: 2px 2px 0 #005537; /* Sombra para efecto gamer */
+}
+
+.time-up-container button {
+    background-color: #00ff88; /* Fondo verde neón */
+    color: #16213e; /* Texto azul oscuro */
+    border: 2px solid #005537; /* Borde más oscuro */
+}
+
+.time-up-container button:hover {
+    background-color: #00cc6a; /* Verde más oscuro al pasar el mouse */
+}
+
+/* Botón de música */
+#boton-musica {
+    position: fixed; /* Fija el botón en la pantalla */
+    top: 20px;
+    right: 20px;
+    background-color: #e94560; /* Fondo rojo vibrante */
+    color: #ffffff; /* Texto blanco */
+    border: 2px solid #8a1a1a; /* Borde más oscuro */
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%; /* Botón circular */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#boton-musica:hover {
+    background-color: #c2334f; /* Rojo más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Efecto de crecimiento */
+}
+
+#boton-musica:active {
+    transform: scale(0.9); /* Efecto de compresión al hacer clic */
+}
+
+.high-scores-container {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(22, 33, 62, 0.8);
+    border: 3px solid #e94560;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(233, 69, 96, 0.6);
+}
+
+.high-scores-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.high-scores-container li {
+    background-color: #e94560;
+    color: #ffffff;
+    padding: 8px;
+    margin: 4px 0;
+    border: 2px solid #8a1a1a;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+}
+
+/* Importar la fuente */
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
